@@ -2,6 +2,8 @@ package Model;
 
 import Util.*;
 import View.*;
+import javafx.scene.SnapshotParameters;
+import javafx.scene.shape.Rectangle;
 
 import java.awt.*;
 
@@ -12,6 +14,7 @@ public class Block implements Displayable {
 	private float height;
 	private float width;
 	private Position position;
+	private boolean isFromRight;
 
 	/**
 	 * 
@@ -51,8 +54,12 @@ public class Block implements Displayable {
 	 * @param v
 	 */
 	public void display(View v) {
-		// TODO - implement Block.animate
-		throw new UnsupportedOperationException();
+		javafx.scene.shape.Rectangle rect = new Rectangle(
+				width,
+				height,
+				javafx.scene.paint.Color.BLUE);
+
+		v.draw(position.getX(),position.getY(),rect.snapshot(new SnapshotParameters(), null));
 	}
 
 }

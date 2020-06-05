@@ -1,4 +1,5 @@
 package Controller;
+import Service.BlockFactory;
 import View.*;
 import javafx.scene.input.KeyCode;
 
@@ -18,6 +19,7 @@ public class Controller {
 				stopBlocks();
 			}
 		});
+		BlockFactory.getInstance();
 	}
 
 	public void play() {
